@@ -1,0 +1,16 @@
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.active {
+    animation: show-nav .5s forwards;
+}
+@keyframes show-nav {
+    from{
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
