@@ -13,11 +13,16 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   color: $dark;
+  // overflow: hidden;
 }
 
 .nav {
   &-bar {
-    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: $pure-white;
+    width: 100%;    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2em;
@@ -87,6 +92,84 @@ body {
 .nav-desktop {
   display: none;
 }
+
+.header {
+  position: relative;
+  height: 40em;
+  background-image: url("../../dist/img/jungle-1807476_640.jpg");
+  background-size: cover;
+  background-position: center;
+  color: $pure-white;
+  z-index: 0;
+
+  .wrapper {
+    height: 100%;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__company {
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+  &__title {
+    font-size: 3rem;
+  }
+}
+.about-us {
+  &__img {
+    width: 100%;
+  }
+  &__text {
+    padding: 2em;
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1em;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+  }
+}
+.hero-section {
+  height: 25rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../dist/img/girl-5785590_640.jpg');
+  background-size: cover;
+  background-position: center;
+  color: $pure-white;
+  z-index: 0;
+  &__title {
+    font-size: 2rem;
+    padding: 1em 2em;
+    border: 1px solid $pure-white;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-us {
+    .about-us__box {
+      padding:  0 2em;
+      display: flex;
+    }
+    &__img {
+      width: 45%;
+    }
+    &__text {
+      padding: 0 2em;
+      p {
+        line-height: 2.5rem;
+      }
+      h3 {
+        font-size: 2.3rem;
+      };
+    }
+  }
+}
 @media (min-width: 992px) {
   .nav {
     &-bar {
@@ -113,6 +196,37 @@ body {
         color: $dark;
         text-decoration: none;
       }
+    }
+  }
+  .header {
+    height: 50em;
+    background-image: url('../../dist/img/jungle-1807476_1920.jpg');
+
+    &__company {
+      font-size: 3.2rem;
+    }
+    &__title {
+      font-size: 4rem;
+    }
+  }
+  .about-us {
+  
+    &__text {
+      padding-left: 7em;
+      p {
+        font-size: 2rem;
+        line-height: 3.5rem;
+      }
+      h3 {
+        font-size: 3rem;
+      }
+    }
+  }
+  .hero-section {
+    background-image: url('../../dist/img/girl-5785590_1920.jpg');
+    &__title {
+      font-size: 3.5rem;
+      padding: 1em 4em;
     }
   }
 }

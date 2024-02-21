@@ -1,16 +1,35 @@
 .wrapper {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .active {
-    animation: show-nav .5s forwards;
+  animation: show-nav 0.5s forwards;
 }
 @keyframes show-nav {
-    from{
-        left: -100%;
-    }
-    to {
-        left: 0;
-    }
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+.hero__shadow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+}
+.section-title {
+    padding: 1em;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.section {
+    margin-bottom: 3em;
 }
