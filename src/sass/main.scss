@@ -8,21 +8,22 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   color: $dark;
-  // overflow: hidden;
 }
 
 .nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: $pure-white;
   &-bar {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    background-color: $pure-white;
-    width: 100%;    display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2em;
@@ -133,12 +134,12 @@ body {
   }
 }
 .hero-section {
-  height: 25rem;
+  height: 30vh;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('../../dist/img/girl-5785590_640.jpg');
+  background-image: url("../../dist/img/girl-5785590_640.jpg");
   background-size: cover;
   background-position: center;
   color: $pure-white;
@@ -149,11 +150,122 @@ body {
     border: 1px solid $pure-white;
   }
 }
-
+.offers {
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__card {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 3em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px $dark;
+    margin-bottom: 4em;
+    .card__title {
+      font-size: 2.2rem;
+      margin-bottom: 0.5em;
+    }
+    .card__price {
+      font-size: 3rem;
+      font-weight: bold;
+      &::first-letter {
+        font-size: 3.5rem;
+      }
+    }
+    .card__items {
+      margin: 2em 0;
+      font-size: 1.6rem;
+    }
+    .card__item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5em;
+    }
+    .card__item.disabled {
+      color: $grey;
+    }
+    .card__icon {
+      width: 20px;
+      margin-right: 0.5em;
+    }
+    .card__btn {
+      padding: 0.5em 5em;
+      border: none;
+      border-radius: 5px;
+      background: transparent;
+      box-shadow: 0 0 5px $dark;
+    }
+    .card__btn.best-option {
+      background: $green;
+      box-shadow: 0 0 5px $green;
+    }
+  }
+}
+.main-footer {
+  background-color: #ddd;
+  &__block {
+    // padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  &__logo {
+    padding: 2em 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 2em;
+      margin-right: 0.5em;
+    }
+    p {
+      font-size: 2.2em;
+    }
+  }
+  &__links {
+    padding: 2em 0;
+    .col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__title {
+        font-size: 3rem;
+        margin: 0.5em;
+      }
+      &__list {
+        list-style: none;
+        a {
+          text-decoration: none;
+          color: $dark;
+        }
+        li {
+          margin: 0.5em 0;
+        }
+      }
+    }
+  }
+}
+.footer {
+  border-top: 1px solid $dark;
+  background-color: #ddd;
+  text-align: center;
+  p {
+    font-size: 2rem;
+    padding: 1em;
+  }
+}
 @media (min-width: 768px) {
   .about-us {
     .about-us__box {
-      padding:  0 2em;
+      padding: 0 2em;
       display: flex;
     }
     &__img {
@@ -166,7 +278,42 @@ body {
       }
       h3 {
         font-size: 2.3rem;
-      };
+      }
+    }
+  }
+  .offers {
+    &__box {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &__card {
+      width: 40%;
+      margin: 2em;
+    }
+  }
+  .main-footer {
+    &__block {
+      font-size: 2.2rem;
+    }
+    &__logo {
+      img {
+        width: 3em;
+      }
+    }
+    &__links {
+      .col {
+        &__title {
+          font-size: 2.5rem;
+        }
+        &__list {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  .footer {
+    p {
+      font-size: 2rem;
     }
   }
 }
@@ -192,15 +339,22 @@ body {
     &__link {
       padding: 1.5em 1em;
       margin-left: 2em;
+      transition: background-color .3s;
       a {
         color: $dark;
         text-decoration: none;
+      }
+      &:hover {
+        background-color: $dark;
+        a {
+          color: $pure-white;
+        }
       }
     }
   }
   .header {
     height: 50em;
-    background-image: url('../../dist/img/jungle-1807476_1920.jpg');
+    background-image: url("../../dist/img/jungle-1807476_1920.jpg");
 
     &__company {
       font-size: 3.2rem;
@@ -210,7 +364,6 @@ body {
     }
   }
   .about-us {
-  
     &__text {
       padding-left: 7em;
       p {
@@ -223,10 +376,46 @@ body {
     }
   }
   .hero-section {
-    background-image: url('../../dist/img/girl-5785590_1920.jpg');
+    background-image: url("../../dist/img/girl-5785590_1920.jpg");
     &__title {
       font-size: 3.5rem;
       padding: 1em 4em;
+    }
+  }
+  .offers {
+    &__box {
+      flex-wrap: nowrap;
+    }
+    &__card {
+      width: 25%;
+      margin: 2em;
+    }
+  }
+  .main-footer {
+    &__block {
+      padding: 1em;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__logo {
+      padding: 0;
+    }
+    &__links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .col {
+        align-items: flex-start;
+        margin: 0 2em;
+        &__title {
+          margin: 0.5em 0;
+        }
+        &__list {
+          li {
+            margin: 1em 0;
+          }
+        }
+      }
     }
   }
 }
