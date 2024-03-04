@@ -11,10 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.classList.toggle("active");
         allNavsItems.forEach((navItem) => {
           navItem.addEventListener("click", () => {
-            nav.classList.remove('nav--active');
+            navLinks.classList.remove('active');
           });
         });
-        handleNavItemsAnimation();
       };
     navBtn.addEventListener('click', handleNav);
     handleCurrentYear();

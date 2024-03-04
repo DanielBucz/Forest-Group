@@ -27,6 +27,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 2em;
+    border-bottom: 1px solid $grey;
+    a {
+      text-decoration: none;
+    }
   }
   &__logo {
     display: flex;
@@ -148,6 +152,10 @@ body {
     font-size: 2rem;
     padding: 1em 2em;
     border: 1px solid $pure-white;
+    transition: transform .3s;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 .offers {
@@ -167,6 +175,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px $dark;
     margin-bottom: 4em;
+    transition: transform .3s;
     .card__title {
       font-size: 2.2rem;
       margin-bottom: 0.5em;
@@ -200,22 +209,39 @@ body {
       border-radius: 5px;
       background: transparent;
       box-shadow: 0 0 5px $dark;
+      cursor: pointer;
     }
     .card__btn.best-option {
       background: $green;
       box-shadow: 0 0 5px $green;
     }
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+  &__info {
+    padding: 1em;
+    font-size: 1.8rem;
+    text-align: center;
+    a {
+      padding: 0.5em 0;
+      color: $green;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+  &--page {
+    margin-top: 8em;
   }
 }
 .main-footer {
   background-color: #ddd;
   &__block {
-    // padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   &__logo {
     padding: 2em 0 0 0;
@@ -237,7 +263,7 @@ body {
       flex-direction: column;
       align-items: center;
       &__title {
-        font-size: 3rem;
+        font-size: 2.2rem;
         margin: 0.5em;
       }
       &__list {
@@ -260,6 +286,73 @@ body {
   p {
     font-size: 2rem;
     padding: 1em;
+  }
+}
+.contact {
+  &-title {
+    margin-top: 3em;
+  }
+  font-size: 1.6rem;
+  background-color: $dark;
+  color: $pure-white;
+  &__box {
+    padding: 2em;
+  }
+  &__info {
+    padding: 0 0 2em;
+    &-list {
+      list-style: none;
+      li {
+        padding: 1em 0;
+      }
+    }
+  }
+  &__map {
+    height: 300px;
+  }
+}
+.form {
+  .contact-form {
+    padding: 0 3em 3em;
+    width: 100%;
+  }
+  .contact-box {
+    display: flex;
+    flex-direction: column;
+    margin: 4em 0;
+  }
+
+  .contact-form label {
+    margin-bottom: 1em;
+    font-size: 1.6rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    padding: 1em;
+    font-size: 1.6rem;
+    font-family: inherit;
+    border: 2px solid $light-dark;
+    border-radius: 12px;
+  }
+
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 15em;
+  }
+
+  .contact-form button {
+    padding: 1.2em;
+    width: 100%;
+    cursor: pointer;
+    background: none;
+    transition: background-color .3s, color .3s;
+  }
+
+  .contact-form button:hover {
+    color: $pure-white;
+    background-color: $green;
   }
 }
 @media (min-width: 768px) {
@@ -316,6 +409,16 @@ body {
       font-size: 2rem;
     }
   }
+  .contact {
+    &__box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__info {
+      padding: 0;
+    }
+  }
 }
 @media (min-width: 992px) {
   .nav {
@@ -339,7 +442,7 @@ body {
     &__link {
       padding: 1.5em 1em;
       margin-left: 2em;
-      transition: background-color .3s;
+      transition: background-color 0.3s;
       a {
         color: $dark;
         text-decoration: none;
@@ -382,15 +485,6 @@ body {
       padding: 1em 4em;
     }
   }
-  .offers {
-    &__box {
-      flex-wrap: nowrap;
-    }
-    &__card {
-      width: 25%;
-      margin: 2em;
-    }
-  }
   .main-footer {
     &__block {
       padding: 1em;
@@ -416,6 +510,25 @@ body {
           }
         }
       }
+    }
+  }
+  .contact {
+    &__info {
+      width: 30%;
+    }
+    &__map {
+      width: 70%;
+    }
+  }
+}
+@media (min-width: 1100px) {
+  .offers {
+    &__box {
+      flex-wrap: nowrap;
+    }
+    &__card {
+      max-width: 25%;
+      margin: 2em;
     }
   }
 }
