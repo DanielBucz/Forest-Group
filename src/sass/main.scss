@@ -446,6 +446,12 @@ body {
       a {
         color: $dark;
         text-decoration: none;
+      } 
+      &:first-of-type {
+        background-color: $dark;
+        a {
+          color: $pure-white;
+        }
       }
       &:hover {
         background-color: $dark;
@@ -453,6 +459,7 @@ body {
           color: $pure-white;
         }
       }
+     
     }
   }
   .header {
